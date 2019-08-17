@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="name"/><br/>
+    <input type="text" v-bind:value="name" :id="myname"/><!--取值功能与上相同，但不具有双向绑定的作用-->
+</div>
+</body>
+<script type="application/javascript" src="vue.js"></script>
+<script type="application/javascript">
+    let vue=new Vue({
+        el:"#app",
+        data:{
+            name:"meimei",
+            myname:"bind"
+        }
+    })
+</script>
+</html>

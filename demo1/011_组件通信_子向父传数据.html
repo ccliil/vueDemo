@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+思路：通过点击按钮触发add事件，然后触发父组件中的inc所对应的事件来改变父组件中count的值
+
+-->
+<div id="app">
+    <counter :count="count" @inc="incrment">
+    </counter>
+
+</div>
+
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    let counter = {
+        template:"<button v-on:click=\"add\">你点了我 {{ count }} 次，我记住了.</button>",/*出现的值是父组件中的count值*/
+        props:['count'],
+        data() {
+            return {
+            }
+        },
+        methods:{
+            add(){
+               this.$emit("inc");
+            }
+        }
+    };
+
+    var vm = new Vue({
+        el:"#app",
+        components:{
+          counter:counter
+        },
+        data:{
+            count:1 /*可通过vm.count在console查看子组件中count的值*/
+        },
+        methods: {
+            incrment(){
+                this.count++;
+            }
+        }
+    })
+
+</script>
+</html>

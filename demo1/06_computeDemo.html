@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <h3>使用属性直接计算：</h3>{{price*count}}<br/>
+        <h3>使用created方法计算：</h3>{{totalPrice}}<br/>
+        <h3>使用methids方式计算：</h3>{{totalPrice1()}}<br/>
+        <h3>采用computed方式计算：</h3>{{totalPrice}}
+    </div>
+</body>
+<script type="application/javascript" src="vue.js"></script>
+<script type="application/javascript">
+    let vue=new Vue({
+        el:"#app",
+        data:{
+           price:200,
+            count:5,
+            totalPrice:0
+        },
+        created(){
+            this.totalPrice=this.price * this.count;
+        },
+        computed:{//调用时只能调用对应属性
+            totalPrice2(){
+                return this.price * this.count;
+            }
+        },
+        methods:{
+            totalPrice1(){
+                return this.price * this.count;
+            }
+
+        }
+
+    })
+</script>
+</html>

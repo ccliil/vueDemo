@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="demo">
+    <ul >
+        <li v-for="(user,index) in users" :key="index"><!--:key没什么特别意思，就是为了能查按序找某一具体的数据-->
+            {{user.name}}--->{{user.age}}-->{{user.sex}}
+        </li>
+    </ul>
+</div>
+</body>
+<script type="application/javascript" src="vue.js"></script>
+<script type="application/javascript">
+    let vue=new Vue({
+        el:"#demo",
+        data:{
+            users:[
+                {name:"xixi",age:21,sex:"女"},
+                {name:"haha",age:23,sex:"男"},
+                {name:"lucy",age:22,sex:"女"},
+                {name:"tom",age:25,sex:"男"}
+            ]
+        }
+    })
+</script>
+</html>

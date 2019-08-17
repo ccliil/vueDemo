@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2>被监听的输入框：</h2><input type="text"  v-model="message"/>
+</div>
+
+</body>
+<script type="application/javascript" src="vue.js"></script>
+<script type="application/javascript">
+   let vue=new Vue({
+       el:"#app",
+       data:{
+           message:""
+       },
+       watch:{
+           message(newval,oldVal){
+               console.log(newval,oldVal);
+           }
+       }
+   })
+</script>
+</html>

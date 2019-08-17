@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="button" v-on:click="show=!show" value="点我呀"/>
+    <h1 v-if="show">看到我啦？！</h1><br/>
+    <h1 v-show="show">看到我啦？！show </h1>
+
+</div>
+</body>
+<script type="application/javascript" src="vue.js"></script>
+<script type="application/javascript">
+    let vue=new Vue({
+        el:"#app",
+        data:{
+            show:true
+        }
+    })
+</script>
+</html>

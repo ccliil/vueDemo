@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="demo">
+    <input type="button" v-on:click="hello" value="button"/>
+</div>
+</body>
+<script type="application/javascript" src="vue.js"></script>
+<script type="application/javascript">
+    let vue=new Vue({
+        el:"#demo",
+        methods:{
+            hello(){
+                alert("hello vue!!!")
+            }
+        }
+    })
+</script>
+</html>
